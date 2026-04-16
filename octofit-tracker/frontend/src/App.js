@@ -17,13 +17,20 @@ const navigationItems = [
 
 function App() {
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const logoSrc = `${process.env.PUBLIC_URL}/octofitapp-small.png`;
 
   return (
     <div className="app-shell bg-body-tertiary min-vh-100">
       <nav className="navbar navbar-expand-lg navbar-dark app-navbar shadow-sm sticky-top">
         <div className="container py-2">
           <NavLink className="navbar-brand fw-semibold" to="/users">
-            OctoFit Tracker
+            <span className="brand-mark">
+              <img className="brand-logo" src={logoSrc} alt="OctoFit logo" />
+            </span>
+            <span>
+              <span className="d-block brand-title">OctoFit Tracker</span>
+              <span className="d-block brand-subtitle">Fitness dashboard</span>
+            </span>
           </NavLink>
           <button
             className="navbar-toggler"
@@ -68,6 +75,13 @@ function App() {
                 <div className="col-lg-4">
                   <div className="card border-0 shadow-sm app-summary-card">
                     <div className="card-body">
+                      <div className="d-flex align-items-center gap-3 mb-3">
+                        <img className="hero-logo" src={logoSrc} alt="OctoFit robot mascot" />
+                        <div>
+                          <p className="text-uppercase small fw-semibold text-primary mb-1">OctoFit identity</p>
+                          <h2 className="h5 card-title mb-0">Energetic, clear and API-driven</h2>
+                        </div>
+                      </div>
                       <h2 className="h5 card-title mb-3">Módulos disponibles</h2>
                       <div className="d-flex flex-wrap gap-2">
                         {navigationItems.map(item => (
