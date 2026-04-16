@@ -2,6 +2,8 @@ import { useEffect, useMemo, useState } from 'react';
 import { buildApiEndpoint, normalizeApiData } from './api';
 
 function DataResourcePage({
+  endpoint,
+  endpointTemplate,
   resource,
   title,
   description,
@@ -9,7 +11,7 @@ function DataResourcePage({
   emptyMessage,
   detailsTitle,
 }) {
-  const endpoint = buildApiEndpoint(resource);
+  const resolvedEndpoint = endpoint || buildApiEndpoint(resource);
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
@@ -18,11 +20,11 @@ function DataResourcePage({
 
   useEffect(() => {
     async function fetchItems() {
-      console.log(`[${title}] REST API endpoint:`, endpoint);
+      console.log(`[${title}] REST API endpoint:`, resolvedEndpoint);
 
       try {
         setLoading(true);
-        const response = await fetch(endpoint);
+        const response = await fetch(resolvedEndpoint);
 
         if (!response.ok) {
           throw new Error(`Request failed with status ${response.status}`);
@@ -41,7 +43,7 @@ function DataResourcePage({
     }
 
     fetchItems();
-  }, [endpoint, title]);
+  }, [resolvedEndpoint, title]);
 
   const filteredItems = useMemo(() => {
     const normalizedQuery = query.trim().toLowerCase();
@@ -68,10 +70,15 @@ function DataResourcePage({
               <p className="text-secondary mb-0">{description}</p>
             </div>
             <div className="d-flex flex-column align-items-lg-end gap-2">
-              <span className="badge rounded-pill endpoint-badge px-3 py-2">{endpoint}</span>
+              <span className="badge rounded-pill endpoint-badge px-3 py-2">{resolvedEndpoint}</span>
+              {endpointTemplate && (
+                <span className="small text-secondary text-break text-lg-end">
+                  Codespace pattern: {endpointTemplate}
+                </span>
+              )}
               <a
                 className="btn btn-outline-primary btn-sm"
-                href={endpoint}
+                href={resolvedEndpoint}
                 target="_blank"
                 rel="noreferrer"
               >
