@@ -1,0 +1,219 @@
+.app-shell {
+  background:
+    radial-gradient(circle at top left, rgba(64, 195, 138, 0.18), transparent 28%),
+    radial-gradient(circle at top right, rgba(53, 146, 255, 0.16), transparent 32%),
+    linear-gradient(180deg, #eef6ff 0%, #f7fbff 45%, #eef8f4 100%);
+  color: #173047;
+}
+
+.app-navbar {
+  background: linear-gradient(90deg, #0f172a 0%, #0f4c81 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.app-hero {
+  background: linear-gradient(135deg, #ffffff 0%, #eff8ff 42%, #e6faf2 100%);
+  border: 1px solid rgba(22, 32, 42, 0.08);
+  box-shadow: 0 20px 50px rgba(19, 56, 92, 0.08);
+}
+
+.app-summary-card {
+  background: rgba(255, 255, 255, 0.88);
+  border-radius: 1.25rem;
+}
+
+.navbar-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.brand-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.9rem;
+  background: rgba(255, 255, 255, 0.14);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+}
+
+.brand-logo {
+  width: 2.4rem;
+  height: 2.4rem;
+  object-fit: cover;
+  border-radius: 0.65rem;
+}
+
+.brand-title {
+  color: #ffffff;
+  font-size: 1rem;
+  line-height: 1.1;
+}
+
+.brand-subtitle {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.74rem;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.hero-logo {
+  width: 4rem;
+  height: 4rem;
+  object-fit: cover;
+  border-radius: 1rem;
+  box-shadow: 0 10px 24px rgba(15, 76, 129, 0.18);
+}
+
+.navbar .nav-link {
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.76);
+  padding: 0.5rem 0.95rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  background-color: rgba(109, 222, 168, 0.18);
+  color: #ffffff;
+}
+
+.data-panel {
+  border: 1px solid rgba(22, 32, 42, 0.08);
+  border-radius: 1.25rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, #ffffff 100%);
+  box-shadow: 0 16px 34px rgba(19, 56, 92, 0.06);
+}
+
+.endpoint-badge {
+  background-color: #e7fff3;
+  border: 1px solid rgba(64, 195, 138, 0.16);
+  color: #0f4c81;
+  word-break: break-all;
+}
+
+.table-toolbar {
+  background: linear-gradient(180deg, #f8fcff 0%, #f1fbf7 100%);
+  border: 1px solid rgba(15, 76, 129, 0.08);
+  border-radius: 1rem;
+}
+
+.table-search-input,
+.table-search-input:focus {
+  border-color: rgba(15, 76, 129, 0.18);
+  box-shadow: none;
+}
+
+.table-count-badge {
+  background-color: #e7f1ff;
+  color: #0f4c81;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #1296db 0%, #20bf8f 100%);
+  border: none;
+  box-shadow: 0 10px 20px rgba(18, 150, 219, 0.2);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background: linear-gradient(135deg, #0f86c5 0%, #1ca97e 100%);
+}
+
+.btn-outline-primary {
+  border-color: #1296db;
+  color: #0f6ba6;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus {
+  background-color: #1296db;
+  border-color: #1296db;
+}
+
+.btn-outline-secondary {
+  color: #4b647a;
+}
+
+.card-title,
+.h2,
+.h3,
+.h4,
+.h5,
+.display-6 {
+  color: #123552;
+}
+
+.table thead th {
+  background: linear-gradient(180deg, #edf6ff 0%, #eaf9f3 100%);
+  color: #2d5674;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+  --bs-table-accent-bg: rgba(18, 150, 219, 0.035);
+}
+
+.table-hover > tbody > tr:hover > * {
+  --bs-table-accent-bg: rgba(32, 191, 143, 0.08);
+  color: #173047;
+}
+
+.data-table th {
+  white-space: nowrap;
+}
+
+.data-table td {
+  vertical-align: middle;
+}
+
+.table-actions {
+  width: 1%;
+  white-space: nowrap;
+}
+
+.modal-backdrop.show {
+  opacity: 0.35;
+}
+
+.detail-list dt {
+  color: #4e657b;
+  font-weight: 600;
+}
+
+.detail-list dd {
+  margin-bottom: 0.75rem;
+}
+
+.text-secondary {
+  color: #557085 !important;
+}
+
+a {
+  color: #0f6ba6;
+}
+
+a:hover {
+  color: #0b8b78;
+}
+
+.empty-state {
+  border: 1px dashed rgba(22, 32, 42, 0.18);
+  border-radius: 1rem;
+  background-color: rgba(248, 252, 255, 0.72);
+}
+
+@media (max-width: 991px) {
+  .navbar .nav-link {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .brand-subtitle {
+    display: none !important;
+  }
+}
